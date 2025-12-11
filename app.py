@@ -26,13 +26,10 @@ class User(db.Model):
 with app.app_context():
     db.create_all()
 
-
-# Test route
-@app.route('/test', methods=['GET'])
-def test():
-    return jsonify({'message': 'test route'}), 200
-
-
+@app.route('/', methods=["GET"])
+def home():
+    return "Deployment Success"
+           
 # Create user
 @app.route('/users', methods=['POST'])
 def create_user():
